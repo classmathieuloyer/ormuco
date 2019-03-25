@@ -1,0 +1,90 @@
+# Ormuco technical test
+
+## Description
+
+These are the answers for questions on Ormuco's technical test.
+
+## Author
+
+Mathieu Loyer
+
+## Platforms
+This was completed on MacOs Mojave using python 2.7.15 and should be compatible
+with linux and python version 3.3+
+
+## Operation
+
+### a.py
+Takes two lines of non zero legth on the x axis. The lines can be given as
+tuples or lists and can be delimited by integers of floats.
+For conviniance, this module can be invoked from the command line as such
+python a.py x1 x2 x3 x4
+
+Examples:
+A typical call from a python module after import will be as such
+~~~~
+a.are_lines_overlaping([-10, -5.3], [-7, 0])
+~~~~
+This case will return True
+
+A call from the command line as such
+~~~~
+python a.py -10.1 -5.0 -7.1 0
+~~~~
+Will have the following output
+~~~~
+Lines overlaping?: True
+~~~~
+
+
+### b.py
+Takes two version strings as input and outputs -1, 0 or 1 according to if the
+first version string is smaller than, equal to or larger than the second
+version string.
+
+Examples:
+A typical call from a python module after import will be as such
+~~~~
+b.compare_versions('1.1.1', '1.1.1')
+b.compare_versions('5_1b_1', '5_1_1', '_')
+
+~~~~
+These calls will return 0 and 1 respectively
+
+A call from the command line as such
+~~~~
+python3 b.py 5_1b_1 5_1_1 _
+~~~~
+Will have the following output
+~~~~
+5_1b_1 is LARGER than 5_1_1
+~~~~
+
+
+### c.py
+Lru, least recently used values are replaced when capacity is at maximum, stale 
+values are dropped on query.
+
+Missing features:
+* Geo Distributed
+* Resilient to network failures or crashes.
+
+
+## Contents
+
+1. .gitignore
+    * list of files ignored by git.
+2. README.md
+    * description of repo (this file).
+3. a.py
+    * code for question "a"
+4. b.py
+    * code for question "b"
+5. c.py
+    * code for question "c"
+6. mathieu_loyer_test.py
+    * testing module
+
+Run with python2 or python3 to run set of test values as such:
+python mathieu_loyer.py 
+
